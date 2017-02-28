@@ -76,7 +76,42 @@ namespace triangle
             double p = Perimeter() / 2;
             return Math.Sqrt(p * (p - edges[0].GetLength()) * (p - edges[1].GetLength()) * (p - edges[2].GetLength()));
         }
-        
+        static public double AvgPerimeter(Triangle[] mas)
+        {
+            int count = 0;
+            double sum = 0;
+            for (int i = 0; i < mas.Length; i++)
+            {
+
+                if (mas[i].IsRight)
+                {
+                    sum += triangles[i].Perimeter;
+                    count++;
+                }
+            }
+            return sum / count;
+        }
+
+
+        static public double AvgArea(Triangle[] mas)
+        {
+            int count = 0;
+            double sum = 0;
+            for (int i = 0; i < mas.Length; i++)
+            {
+                if (mas[i].IsFalse)
+                {
+                    sum += triangles[i].Area;
+                    count++;
+                }
+            }
+            return sum / count;
+        }
+
+        public Point[] GetPoints()
+        {
+            return points;
+        }
 
         public Point[] GetPoints()
         {

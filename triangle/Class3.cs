@@ -45,6 +45,9 @@ namespace triangle
                 return true;
             }
             return false;
+            {
+                Console.WriteLine("Вы не можете использовать эти точки для создания треугольника");
+            }
         }
 
 
